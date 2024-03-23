@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --White: hsl(0, 0%, 100%);
+    --Light-pink: hsl(275, 100%, 97%);
+    --Grayish-purple: hsl(292, 16%, 49%);
+    --Dark-purple: hsl(292, 42%, 14%);
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    position: relative;
+    font-family: "Work Sans", sans-serif;
+    background-color: var(--Light-pink);
+}
+
+.bgimg{
+    height: 15rem;
+    background-image: url(./assets/images/background-pattern-desktop.svg);
+}
+
+main{
+    height: 34rem;
+    width: 46rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.3rem;
+    position: absolute;
+    background-color: transparent;
+    top:7rem;
+    left: 25vw;
+    margin: 0 0 2rem 0 ;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 2rem;
+    width: 100%;
+    background-color: var(--White);
+    border-radius: 20px;
+    padding: 2rem 4rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.content .head{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+}
+
+.head h1{
+    color: var(--Dark-purple);
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.qns{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    gap: 1rem;
+}
+
+.qns .question{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.question h2{
+    color: var(--Dark-purple);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.question img{
+    cursor: pointer;
+}
+
+.answer{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1.4s ease;
+}
+
+.qns.active .answer{
+    max-height: fit-content;
+}
+
+.answer p{
+    color: var(--Grayish-purple);
+}
+
+.attribution{ 
+    font-size: 12px; text-align: center; 
+}
+
+.attribution a{ 
+    color: hsl(228, 45%, 44%); 
+}
+
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    main{
+        width: 45rem;
+        left: 19%;
+    }
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) { 
+    main{
+        width: 80vw;
+        left: 6em;
+    }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) { 
+    main{
+        width: 80vw;
+        left: 4.8em;
+    }
+    .content{
+        padding: 2rem 2rem;
+    }
+    
+}
+@media only screen and (max-width: 575px) {
+    main{
+        height: 30rem;
+        width: 80vw;
+        left: 2.3em;
+    }
+    .content{
+        padding: 2rem 2rem;
+    }
+    .head h1{
+        font-size: 2rem;
+    }
+}
